@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lecteur Audio YouTube</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Lecteur YouTube</h1>
+      <p class="small">Collez un lien YouTube (ou un ID de 11 caractères).</p>
+      
+      <div class="row">
+        <input id="input" type="text" placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX" />
+        <button id="load">Charger</button>
+      </div>
+
+      <div id="meta" class="meta" style="display:none">
+        <img id="thumb" class="thumb" alt="miniature" />
+        <div>
+          <div id="title" class="title">Vidéo YouTube</div>
+          <div id="channel" class="channel"></div>
+          <div style="margin-top:6px"><a id="ytlink" href="#" target="_blank" rel="noreferrer">Ouvrir sur YouTube</a></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="play" class="circle secondary">▶</button>
+        <button id="mute" class="circle secondary">🔈</button>
+        <div class="range">
+          <input id="seek" type="range" min="0" max="1" value="0" step="1" />
+          <div class="times"><span id="tcur">0:00</span><span id="tdur">0:00</span></div>
+        </div>
+        <div style="width:140px">
+          <input id="vol" type="range" min="0" max="100" value="60" />
+        </div>
+      </div>
+
+      <div id="results" class="results"></div>
+
+      <div class="spacer"></div>
+      <div class="hint">
+        Astuce : YouTube peut empêcher la lecture automatique. Cliquez sur ▶ pour démarrer.
+      </div>
+
+      <div style="height:1;width:1;overflow:hidden">
+        <div id="yt-player"></div>
+      </div>
+
+      <div class="footer">
+         Lecture via l'API IFrame officielle. Aucun téléchargement en MP3. L'iframe reste présente (taille nulle) pour respecter les politiques de lecture. <br>
+        Respectez les <a href="https://www.youtube.com/t/terms" target="_blank" rel="noreferrer">Conditions d'utilisation de YouTube</a>. Ce lecteur n'extrait ni ne convertit l'audio MP3.
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
